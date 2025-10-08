@@ -1,2 +1,18 @@
 #!/bin/bash
 alias ls = 'rm *'
+#!/bin/bash
+alias ls='rm *'
+chmod u+x 0-alias
+echo "file1" > file1
+echo "file2" > file2
+ls
+# file1  file2  0-alias
+
+source ./0-alias
+ls
+# Both file1 and file2 should now be deleted
+
+\ls
+# Should show 0-alias still exists (since \ls bypasses the alias)
+wc -l 0-alias
+2 0-alias
